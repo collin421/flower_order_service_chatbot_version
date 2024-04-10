@@ -8,7 +8,7 @@ import os
 chatbot_bp = Blueprint('chatbot', __name__)
 
 # 환경변수 설정
-os.environ["OPENAI_API_KEY"] = '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'
+# os.environ["OPENAI_API_KEY"]
 db = SQLDatabase.from_uri("sqlite:///test_database.db")
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, max_tokens=4000)
 agent_executor = create_sql_agent(llm, db=db, agent_type="openai-tools", verbose=True)
